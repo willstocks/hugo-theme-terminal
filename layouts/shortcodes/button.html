@@ -1,0 +1,7 @@
+{{ if .Get "href" }}
+  <a href="{{ .Get "href" }}" style="text-decoration-color:black;" class="button-container">
+    <button type="button" class="button primary {{with .Get "size"}}{{ . }}{{ end }}" {{ if .Get "color" }}style="background-color:{{ with in (.Get "color") "accent" }}var(--accent);{{ else }}{{ .Get "color" }};{{ end }}"{{ end }}>
+      {{ .Inner }}
+    </button>
+  </a>
+{{ end }}
